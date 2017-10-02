@@ -39,7 +39,7 @@ e1.pack()
 
 def enterRule():
     #ruleFrame.pack(expand = True, fill = 'both')
-    text = e.get() + " " + e1.get() + "\n"
+    text = e.get() + e1.get() + "\n"
     with open('/etc/snort/rules/local.rules','a') as f:
         try:
             f.write(text)
