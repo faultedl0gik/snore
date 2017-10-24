@@ -22,26 +22,35 @@ class Menu:
         self.action_var=StringVar()
         self.action_var.set("Alert")
         self.action = OptionMenu(root, self.action_var, *self.action_options)
-        self.action.grid(column=1,row=10)
+        self.action.grid(column=1,row=2)
         
-        
+        #DropMenu_Protocol
+        self.proto_options = ["TCP",
+                              "UDP",
+                              "ICMP",
+                              "IP"]
+        self.proto_var=StringVar()
+        self.proto_var.set("IP")
+        self.proto = OptionMenu(root, proto_var, *proto_options)
+        self.proto.grid(column=2,row=2)
+
         
 
         #Input Src IP Address
         self.ip = Entry(root,width=10,bg='light blue')
-        self.ip.grid(column=3,row=10)
+        self.ip.grid(column=3,row=2)
 
         #Entry Field for a port
         self.port = Entry(root,width=5,bg='sea green')
-        self.port.grid(column=7,row=10)
+        self.port.grid(column=7,row=2)
 
         #Last Field
         self.lastfield = Entry(root,width=50,bg='slate gray')
         self.lastfield.grid(column=8,row=10)
 
         def enterRule():
-            	text = action_var.get() + " " + proto_var.get() + " " + source_ip.get() + " " + source_port.get() + " " + direction.get() + " " + destination_ip.get() + " " + destination_port.get() + " " + lastfield.get()
-
+            	proto_var.get() + " " + source_ip.get() + " " + source_port.get() + " " + direction.get() + " " + destination_ip.get() + " " + destination_port.get() + " " + lastfield.get(otext = action_var.get() + " " +o
+proto_var.get() + " " + source_ip.get() + " " + source_port.get() + " " + direction.get() + " " + destination_ip.get() + " " + destination_port.get() + " " + lastfield.get()
                 with open('/etc/snort/rules/local.rules','a') as f:
 		    try:
 			f.write(text)
