@@ -1,17 +1,23 @@
 #!/usr/bin/python
 ##Authors: 1LT Daniel Brown
-##         SGT Matlock
+##         Assisted by SGT Matlock
 ##Purpose: Designed to allow error free snort rule entry for non 
 ##technical personnel.
 ################################################################
 from Tkinter import *
 
+
 root = Tk()
 root.pack_propagate(False)
-root.geometry("800x500")
+root.geometry("800x300")
 root.title("Snore")
+#FUTURE WORK FOR IMAGE
+#image = Tkinter.PhotoImage(Image.open('snore-master//Snort.png'))
+#panel = Tkinter.Label(root, image=imgag)
+#panel.pack(side = "bottom", fill = "both", expand = "yes")
 
-f = open('C://Users//Daniel//Desktop//Snore//snore-master//logs//local.rules','r')
+#This shows the location of the rules that you want to add too:
+f = open('C://Users//Daniel//Desktop//snore-master//logs//local.rules','r')
 file_contents = f.read()
 
 ##addFrame = Frame(root, bg = 'white')
@@ -139,7 +145,7 @@ def enterRule():
 
  #   with open('/etc/snort/rules/local.rules','a') as f:
  #If you're using windows ensure you use // slashes...or else the file won't work.
-    with open('C://Users//Daniel//Desktop//Snore//snore-master//logs//local.rules','a') as f:
+    with open('C://Users//Daniel//Desktop//snore-master//logs//local.rules','a') as f:
         try:
             f.write(text)
         finally:
@@ -168,7 +174,7 @@ button3 = Button(root,text="Hide Rules",command=hideRules)
 button3.grid(column=1,row=5)
 
 ######################################################################################
-
+### FUTURE WORK
 ##def showRoot():
 ##    root.pack(expand = True, fill = 'both')
 ##    addFrame.pack_forget()
