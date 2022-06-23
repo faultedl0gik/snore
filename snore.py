@@ -1,6 +1,5 @@
 #!/usr/bin/python
 ##Authors: 1LT Daniel Brown
-##         Assisted by SGT Matlock
 ##Purpose: Designed to allow error free snort rule entry for non 
 ##technical personnel.
 ################################################################
